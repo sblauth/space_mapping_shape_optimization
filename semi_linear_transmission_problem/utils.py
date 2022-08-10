@@ -1,8 +1,4 @@
-"""
-Created on 10/08/2022, 10.29
-
-@author: blauths
-"""
+# Copyright (C) 2022 Sebastian Blauth
 
 import cashocs
 import fenics

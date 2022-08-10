@@ -1,4 +1,8 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6979620.svg)](https://doi.org/10.5281/zenodo.6979620)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6979633.svg)](https://doi.org/10.5281/zenodo.6979633)
+
+
+
+
 
 
 
@@ -21,5 +25,5 @@ Each problem is solved with the aggressive space mapping method for shape optimi
 
 In the `visualization` directory, the file `visualization.py` generates the plots used in the paper. The repository is already initialized with the solutions obtained for the numerical examples in the paper, so that this can be run directly.
 
-This software is citeable under the following DOI: [10.5281/zenodo.6979620](https://doi.org/10.5281/zenodo.6979620).
+This software is citeable under the following DOI: [10.5281/zenodo.6979633](https://doi.org/10.5281/zenodo.6979633).
 

@@ -50,13 +50,15 @@ fine_model = utils.FineModel(mesh, Re, q_in, output_list)
 
 up_param = Function(V)
 u_param, p_param = split(up_param)
-J_param = Constant(0.0) * dx
-J_param_tracking = fine_model.J_tracking
-for idx, i in enumerate(range(5, 8)):
-    J_param_tracking[idx]["integrand"] = dot(u_param, n) * ds(i)
+J_param = [
+    cashocs.ScalarTrackingFunctional(
+        dot(u_param, n) * ds(i), fine_model.tracking_goals[idx]
+    )
+    for idx, i in enumerate(range(5, 8))
+]
 
 parameter_extraction = sosm.ParameterExtraction(
-    coarse_model, J_param, up_param, config=cfg, scalar_tracking_forms=J_param_tracking
+    coarse_model, J_param, up_param, config=cfg
 )
 
 space_mapping = sosm.SpaceMapping(
@@ -69,6 +71,7 @@ space_mapping = sosm.SpaceMapping(
     use_backtracking_line_search=False,
     broyden_type="good",
     memory_size=5,
+    save_history=True,
 )
 
 space_mapping.solve()

@@ -62,6 +62,7 @@ space_mapping = sosm.SpaceMapping(
     broyden_type="good",
     memory_size=5,
     verbose=True,
+    save_history=True,
 )
 space_mapping.inject_pre_hook(hook)
 space_mapping.solve()

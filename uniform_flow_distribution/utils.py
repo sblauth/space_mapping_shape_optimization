@@ -1,5 +1,7 @@
 # Copyright (C) 2022 Sebastian Blauth
 
+import ctypes
+
 import cashocs
 import fenics
 import os
@@ -14,9 +16,7 @@ class FineModel(sosm.FineModel):
     def __init__(self, mesh, Re, q_in, output_list):
         super().__init__(mesh)
 
-        self.J_tracking = [
-            {"integrand": 0.0, "tracking_goal": 0.0} for i in range(5, 8)
-        ]
+        self.tracking_goals = [ctypes.c_double(0.0) for _ in range(5, 8)]
         self.iter = 0
 
         self.Re = Re
@@ -90,5 +90,5 @@ class FineModel(sosm.FineModel):
         ]
         self.output_list.append(self.flow_values)
 
-        for idx, term in enumerate(self.J_tracking):
-            term["tracking_goal"] = self.flow_values[idx]
+        for idx in range(len(self.tracking_goals)):
+            self.tracking_goals[idx].value = self.flow_values[idx]

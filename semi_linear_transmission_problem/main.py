@@ -45,7 +45,7 @@ def hook():
 
 
 u_param = Function(V)
-J_param = Constant(0.5) * pow(u_param - u_fine, 2) * dx
+J_param = cashocs.IntegralFunctional(Constant(0.5) * pow(u_param - u_fine, 2) * dx)
 
 parameter_extraction = sosm.ParameterExtraction(
     coarse_model, J_param, u_param, config=cfg, mode="initial"
@@ -64,5 +64,5 @@ space_mapping = sosm.SpaceMapping(
     verbose=True,
     save_history=True,
 )
-space_mapping.inject_pre_hook(hook)
+space_mapping.inject_pre_callback(hook)
 space_mapping.solve()

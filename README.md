@@ -11,7 +11,7 @@ in [Space Mapping for PDE Constrained Shape Optimization](https://github.com/sbl
 
 To run the code, you have to install [cashocs](https://cashocs.readthedocs.io/)
 first, which includes all necessary prerequisites. The results presented in this
-repository have been obtained with version 1.8.4 of cashocs (which uses FEniCS 2019.1).
+repository have been obtained with version 2.0.0-alpha0 of cashocs (which uses FEniCS 2019.1).
 
 The repository consists of the following test cases:
 

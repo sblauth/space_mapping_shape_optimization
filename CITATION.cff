@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Blauth"
+  given-names: "Sebastian"
+  orcid: "https://orcid.org/ 0000-0001-9173-0866"
+title: "Space Mapping for PDE Constrained Shape Optimization"
+doi: https://doi.org/10.5281/zenodo.7414911
+url: "https://github.com/sblauth/space_mapping_shape_optimization"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Blauth"
+    given-names: "Sebastian"
+    orcid: "https://orcid.org/ 0000-0001-9173-0866"
+  doi: "10.1137/22M1515665"
+  journal: "SIAM Journal on Optimization"
+  month: 8
+  start: 1707
+  end: 1733
+  title: "Space Mapping for PDE Constrained Shape Optimization"
+  volume: 33
+  issue: 3
+  year: 2023
